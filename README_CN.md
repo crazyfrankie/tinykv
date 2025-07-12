@@ -8,25 +8,25 @@ TinyKV 课程通过 Raft 共识算法构建一个键值存储系统。它的灵�
 
 整个项目在开始时是一个键值服务器和调度器服务器的框架代码 - 您需要逐步完成核心逻辑：
 
-* [独立 KV](https://github.com/crazyfrankie/tinykv/blob/master/doc/project1-StandaloneKV_CN.md)
+* [独立 KV](https://github.com/crazyfrankie/tinykv/blob/course/doc/project1-StandaloneKV_CN.md)
   * 实现一个独立的存储引擎。
   * 实现原始键值服务处理程序。
-* [Raft KV](https://github.com/crazyfrankie/tinykv/blob/master/doc/project2-RaftKV_CN.md)
+* [Raft KV](https://github.com/crazyfrankie/tinykv/blob/course/doc/project2-RaftKV_CN.md)
   * 实现基本的 Raft 算法。
   * 在 Raft 之上构建容错 KV 服务器。
   * 添加 Raft 日志垃圾回收和快照支持。
-* [多 Raft KV](https://github.com/crazyfrankie/tinykv/blob/master/doc/project3-MultiRaftKV_CN.md)
+* [多 Raft KV](https://github.com/crazyfrankie/tinykv/blob/course/doc/project3-MultiRaftKV_CN.md)
   * 为 Raft 算法实现成员变更和领导者变更。
   * 在 Raft 存储上实现配置变更和区域分裂。
   * 实现基本的调度器。
-* [事务](https://github.com/crazyfrankie/tinykv/blob/master/doc/project4-Transaction_CN.md)
+* [事务](https://github.com/crazyfrankie/tinykv/blob/course/doc/project4-Transaction_CN.md)
   * 实现多版本并发控制层。
   * 实现 `KvGet`、`KvPrewrite` 和 `KvCommit` 请求的处理程序。
   * 实现 `KvScan`、`KvCheckTxnStatus`、`KvBatchRollback` 和 `KvResolveLock` 请求的处理程序。
 
 ## 代码结构
 
-![概览](https://github.com/crazyfrankie/tinykv/blob/master/doc/imgs/overview.png)
+![概览](https://github.com/crazyfrankie/tinykv/blob/course/doc/imgs/overview.png)
 
 类似于 TiDB + TiKV + PD 分离存储和计算的架构，TinyKV 只专注于分布式数据库系统的存储层。如果您对 SQL 层也感兴趣，请参阅 [TinySQL](https://github.com/tidb-incubator/tinysql)。此外，还有一个名为 TinyScheduler 的组件，作为整个 TinyKV 集群的中央控制，收集来自 TinyKV 心跳的信息。之后，TinyScheduler 可以生成调度任务并将任务分发给 TinyKV 实例。所有实例通过 RPC 进行通信。
 整个项目组织为以下目录：
@@ -39,7 +39,7 @@ TinyKV 课程通过 Raft 共识算法构建一个键值存储系统。它的灵�
 
 ## 阅读列表
 
-我们提供了一个[阅读列表](https://github.com/crazyfrankie/tinykv/blob/master/doc/reading_list_CN.md)，涵盖分布式存储系统的知识。虽然并非所有内容都与本课程高度相关，但它们可以帮助您构建该领域的知识体系。
+我们提供了一个[阅读列表](https://github.com/crazyfrankie/tinykv/blob/course/doc/reading_list_CN.md)，涵盖分布式存储系统的知识。虽然并非所有内容都与本课程高度相关，但它们可以帮助您构建该领域的知识体系。
 
 此外，我们鼓励您阅读 TiKV 和 PD 设计的概述，以对您将要构建的内容有一个总体印象：
 
